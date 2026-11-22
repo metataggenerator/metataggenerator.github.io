@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Tag Generator — Free SEO, Open Graph & Twitter Card Tool</title>
+<meta name="description" content="Generate free SEO meta tags, Open Graph tags and Twitter Card tags, with a search-result preview.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.6}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:22px;font-weight:800;color:#1d4ed8}
+nav a{margin-left:16px;color:#374151;font-weight:600}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.hero{background:linear-gradient(120deg,#1e3a8a,#2563eb 45%,#06b6d4);color:#fff;padding:40px 28px;border-radius:0 0 16px 16px;margin-bottom:20px;text-align:center}
+.hero h1{font-size:32px;margin-bottom:8px}
+.hero p{max-width:640px;margin:0 auto}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+.card h2{font-size:20px;margin-bottom:10px}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input[type=text],input[type=url],textarea{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+button{background:#2563eb;color:#fff;border:none;padding:11px 18px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:12px}
+button:hover{background:#1d4ed8}
+button.secondary{background:#fff;color:#2563eb;border:1px solid #2563eb}
+.result{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:14px;margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:monospace;font-size:13px}
+.preview{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px;margin-top:12px}
+.preview .ptitle{color:#1a0dab;font-size:18px}
+.preview .purl{color:#006621;font-size:13px}
+.preview .pdesc{color:#545454;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.article-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:150px;object-fit:cover;display:block}
+.article-card .body{padding:14px}
+.article-card h3{font-size:16px;margin-bottom:6px}
+.article-card p{font-size:14px;color:#4b5563}
+.tools-list a{display:block;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin-bottom:10px;font-weight:700;color:#1f2937}
+.tools-list a span{display:block;font-weight:400;color:#6b7280;font-size:14px}
+.meter{height:10px;background:#e5e7eb;border-radius:6px;overflow:hidden;margin:8px 0}
+.meter div{height:100%;background:#2563eb}
+footer{background:#0f172a;color:#94a3b8;padding:24px 20px;text-align:center;margin-top:30px}
+footer a{color:#93c5fd;margin:0 10px}
+.faq h3{font-size:16px;margin-top:12px}
+.heroimg{width:100%;border-radius:12px;margin-bottom:16px}
+.muted{color:#6b7280;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/">MetaTagGenerator</a><nav><a href="/">Home</a><a href="/tools/open-graph-generator.html">Open Graph</a><a href="/tools/meta-description-checker.html">Description Checker</a><a href="/about.html">About</a></nav></header>
+<div class="container">
+<div class="hero"><h1>Free Meta Tag Generator</h1><p>Create SEO meta tags, Open Graph tags, and Twitter Card tags in seconds — then preview exactly how your page will look in Google search results.</p></div>
+<div class="card"><h2>Meta Tag Generator</h2>
+<p>Enter your page title, description, and keywords. The generator produces the full set of tags to paste into the <code>&lt;head&gt;</code> of your page, plus a live search-result preview.</p>
+<label for="title">Page title</label><input type="text" id="title" placeholder="e.g. The Best Homemade Pizza Recipe | My Food Blog">
+<label for="desc">Meta description</label><textarea id="desc" placeholder="A short summary of the page, 120-160 characters..."></textarea>
+<label for="keywords">Keywords (comma separated, optional)</label><input type="text" id="keywords" placeholder="e.g. pizza recipe, homemade pizza, easy dinner">
+<label for="url">Page URL (optional)</label><input type="url" id="url" placeholder="https://example.com/pizza-recipe">
+<label for="image">Social image URL (optional)</label><input type="url" id="image" placeholder="https://example.com/images/pizza.jpg">
+<label for="robots">Robots</label><select id="robots" style="width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px"><option value="index, follow">index, follow</option><option value="noindex, follow">noindex, follow</option><option value="noindex, nofollow">noindex, nofollow</option></select>
+<button onclick="window._meta=showMeta({title:document.getElementById('title').value,desc:document.getElementById('desc').value,keywords:document.getElementById('keywords').value,url:document.getElementById('url').value,image:document.getElementById('image').value,robots:document.getElementById('robots').value},'meta-out','meta-prev')">Generate Meta Tags</button>
+<button class="secondary" onclick="copyCode('meta-out',this)">Copy Meta Tags</button>
+<div class="result" id="meta-out">Your meta tags will appear here.</div>
+<h3 style="margin-top:16px">Search-result preview</h3>
+<div class="preview" id="meta-prev"><div class="ptitle">Your page title will appear here</div><div class="purl">https://example.com/page</div><div class="pdesc">Your meta description will appear here.</div></div>
+<p class="muted" style="margin-top:12px">Everything runs in your browser — nothing you type is uploaded or stored. Paste the tags inside the <code>&lt;head&gt;</code> section of your page.</p>
+</div>
+<div class="two">
+<div class="card"><h2>What are meta tags?</h2><p>Meta tags are short pieces of HTML in the head of a web page. Search engines read them to understand the page, and social platforms read them to build link previews. Visitors never see them directly, but they shape what people see in search results and when a link is shared.</p></div>
+<div class="card"><h2>More meta tag tools</h2><div class="tools-list">
+<a href="/tools/open-graph-generator.html">Open Graph Generator <span>Tags that control how links look on Facebook and LinkedIn.</span></a>
+<a href="/tools/twitter-card-generator.html">Twitter Card Generator <span>Rich link previews for X.</span></a>
+<a href="/tools/meta-description-checker.html">Meta Description Checker <span>Check length and quality of any description.</span></a>
+<a href="/tools/title-tag-checker.html">Title Tag Checker <span>Check title length and preview it in search results.</span></a>
+</div></div>
+</div>
+<h2 style="margin:20px 0 12px">Meta tag guides</h2>
+<div class="grid"><article class="article-card"><a href="/guides/what-are-meta-tags.html"><img src="/images/what-are-meta-tags.jpg" alt="What Are Meta Tags? A Beginner's Guide to HTML Meta Tags"></a><div class="body"><h3><a href="/guides/what-are-meta-tags.html">What Are Meta Tags? A Beginner's Guide to HTML Meta Tags</a></h3><p>Meta tags live in the head of a web page and tell search engines and social platforms what the page is about. Learn what each one does.</p></div></article><article class="article-card"><a href="/guides/title-tags-guide.html"><img src="/images/title-tags-guide.jpg" alt="Title Tags: The Complete Guide to Writing Better Titles"></a><div class="body"><h3><a href="/guides/title-tags-guide.html">Title Tags: The Complete Guide to Writing Better Titles</a></h3><p>The title tag is the most visible piece of on-page SEO. Learn how to write titles that rank and earn clicks.</p></div></article><article class="article-card"><a href="/guides/meta-descriptions-guide.html"><img src="/images/meta-descriptions-guide.jpg" alt="Meta Descriptions: How to Write Ones People Actually Click"></a><div class="body"><h3><a href="/guides/meta-descriptions-guide.html">Meta Descriptions: How to Write Ones People Actually Click</a></h3><p>A good meta description is a short sales pitch in search results. Learn the length, tone, and structure that work best.</p></div></article><article class="article-card"><a href="/guides/open-graph-tags.html"><img src="/images/open-graph-tags.jpg" alt="Open Graph Tags: Control How Your Pages Look When Shared"></a><div class="body"><h3><a href="/guides/open-graph-tags.html">Open Graph Tags: Control How Your Pages Look When Shared</a></h3><p>Open Graph tags decide the title, image, and description shown when a link is shared on Facebook, LinkedIn, and messaging apps.</p></div></article><article class="article-card"><a href="/guides/twitter-card-tags.html"><img src="/images/twitter-card-tags.jpg" alt="Twitter Cards: How to Make Your Links Stand Out on X"></a><div class="body"><h3><a href="/guides/twitter-card-tags.html">Twitter Cards: How to Make Your Links Stand Out on X</a></h3><p>Twitter Cards turn a plain link into a rich preview with a large image. Learn the card types and the tags each one needs.</p></div></article><article class="article-card"><a href="/guides/meta-keywords-history.html"><img src="/images/meta-keywords-history.jpg" alt="Meta Keywords: Why Nobody Uses Them Anymore"></a><div class="body"><h3><a href="/guides/meta-keywords-history.html">Meta Keywords: Why Nobody Uses Them Anymore</a></h3><p>The meta keywords tag once mattered for search rankings. Learn why Google ignores it today and what to use instead.</p></div></article><article class="article-card"><a href="/guides/robots-meta-tag.html"><img src="/images/robots-meta-tag.jpg" alt="The Robots Meta Tag: Control Indexing Page by Page"></a><div class="body"><h3><a href="/guides/robots-meta-tag.html">The Robots Meta Tag: Control Indexing Page by Page</a></h3><p>Use the robots meta tag to keep pages out of search results, block image indexing, or stop search engines following links.</p></div></article><article class="article-card"><a href="/guides/canonical-tags-guide.html"><img src="/images/canonical-tags-guide.jpg" alt="Canonical Tags: Fix Duplicate Content the Right Way"></a><div class="body"><h3><a href="/guides/canonical-tags-guide.html">Canonical Tags: Fix Duplicate Content the Right Way</a></h3><p>A canonical tag tells search engines which version of a page is the original. Learn when and how to use one.</p></div></article><article class="article-card"><a href="/guides/viewport-meta-tag.html"><img src="/images/viewport-meta-tag.jpg" alt="The Viewport Meta Tag: Why Every Mobile Page Needs One"></a><div class="body"><h3><a href="/guides/viewport-meta-tag.html">The Viewport Meta Tag: Why Every Mobile Page Needs One</a></h3><p>Without a viewport tag, pages render badly on phones. Learn what the tag does and the one line every responsive site needs.</p></div></article><article class="article-card"><a href="/guides/charset-meta-tag.html"><img src="/images/charset-meta-tag.jpg" alt="The Charset Meta Tag: A Small Tag That Prevents Garbled Text"></a><div class="body"><h3><a href="/guides/charset-meta-tag.html">The Charset Meta Tag: A Small Tag That Prevents Garbled Text</a></h3><p>The charset tag tells browsers how to read your page's characters. Learn why UTF-8 is the standard and where the tag belongs.</p></div></article><article class="article-card"><a href="/guides/og-image-best-practices.html"><img src="/images/og-image-best-practices.jpg" alt="Open Graph Images: Sizes and Best Practices"></a><div class="body"><h3><a href="/guides/og-image-best-practices.html">Open Graph Images: Sizes and Best Practices</a></h3><p>The og:image is the first thing people see when your link is shared. Learn the right size, format, and design rules.</p></div></article><article class="article-card"><a href="/guides/meta-tags-seo-checklist.html"><img src="/images/meta-tags-seo-checklist.jpg" alt="Meta Tags SEO Checklist: 15 Things to Check on Every Page"></a><div class="body"><h3><a href="/guides/meta-tags-seo-checklist.html">Meta Tags SEO Checklist: 15 Things to Check on Every Page</a></h3><p>A practical checklist for title tags, descriptions, Open Graph, and technical meta tags to run before you publish.</p></div></article><article class="article-card"><a href="/guides/meta-tags-mistakes.html"><img src="/images/meta-tags-mistakes.jpg" alt="10 Meta Tag Mistakes That Hurt Your SEO"></a><div class="body"><h3><a href="/guides/meta-tags-mistakes.html">10 Meta Tag Mistakes That Hurt Your SEO</a></h3><p>From duplicate titles to missing descriptions, these common meta tag errors are easy to fix once you know to look for them.</p></div></article><article class="article-card"><a href="/guides/structured-data-vs-meta.html"><img src="/images/structured-data-vs-meta.jpg" alt="Structured Data vs Meta Tags: What Is the Difference?"></a><div class="body"><h3><a href="/guides/structured-data-vs-meta.html">Structured Data vs Meta Tags: What Is the Difference?</a></h3><p>Meta tags describe a page for search engines and social platforms. Structured data goes further. Learn how the two work together.</p></div></article><article class="article-card"><a href="/guides/meta-tags-social-sharing.html"><img src="/images/meta-tags-social-sharing.jpg" alt="Meta Tags for Social Sharing: Make Every Share Look Good"></a><div class="body"><h3><a href="/guides/meta-tags-social-sharing.html">Meta Tags for Social Sharing: Make Every Share Look Good</a></h3><p>How to use Open Graph and Twitter Card tags so your pages look professional every time someone shares them.</p></div></article><article class="article-card"><a href="/guides/title-tag-length.html"><img src="/images/title-tag-length.jpg" alt="Title Tag Length: How Long Is Too Long?"></a><div class="body"><h3><a href="/guides/title-tag-length.html">Title Tag Length: How Long Is Too Long?</a></h3><p>Google shows about 50 to 60 characters of a title tag. Learn how to stay inside the limit without cutting important words.</p></div></article><article class="article-card"><a href="/guides/meta-description-length.html"><img src="/images/meta-description-length.jpg" alt="Meta Description Length: How Long Should It Be?"></a><div class="body"><h3><a href="/guides/meta-description-length.html">Meta Description Length: How Long Should It Be?</a></h3><p>Google usually shows 150 to 160 characters of a meta description. Learn how to write descriptions that fit and still persuade.</p></div></article><article class="article-card"><a href="/guides/meta-tags-ecommerce.html"><img src="/images/meta-tags-ecommerce.jpg" alt="Meta Tags for Ecommerce: Product Pages That Rank and Sell"></a><div class="body"><h3><a href="/guides/meta-tags-ecommerce.html">Meta Tags for Ecommerce: Product Pages That Rank and Sell</a></h3><p>Product pages need different title and description patterns from blog posts. Learn the formulas that work for stores.</p></div></article><article class="article-card"><a href="/guides/meta-tags-wordpress.html"><img src="/images/meta-tags-wordpress.jpg" alt="Meta Tags in WordPress: A Practical Setup Guide"></a><div class="body"><h3><a href="/guides/meta-tags-wordpress.html">Meta Tags in WordPress: A Practical Setup Guide</a></h3><p>Learn how to add and edit title tags, descriptions, and Open Graph tags in WordPress, with or without an SEO plugin.</p></div></article><article class="article-card"><a href="/guides/meta-tags-audit.html"><img src="/images/meta-tags-audit.jpg" alt="How to Audit Your Meta Tags in Under an Hour"></a><div class="body"><h3><a href="/guides/meta-tags-audit.html">How to Audit Your Meta Tags in Under an Hour</a></h3><p>A step-by-step audit process to find missing, duplicate, or over-long meta tags across a whole website using free tools.</p></div></article></div>
+
+<script>
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function buildMeta(o){
+  const lines=[];
+  lines.push('<title>'+o.title+'</title>');
+  if(o.desc) lines.push('<meta name="description" content="'+o.desc+'">');
+  if(o.keywords) lines.push('<meta name="keywords" content="'+o.keywords+'">');
+  if(o.robots) lines.push('<meta name="robots" content="'+o.robots+'">');
+  lines.push('<meta property="og:title" content="'+o.title+'">');
+  if(o.desc) lines.push('<meta property="og:description" content="'+o.desc+'">');
+  lines.push('<meta property="og:type" content="website">');
+  if(o.url) lines.push('<meta property="og:url" content="'+o.url+'">');
+  if(o.image) lines.push('<meta property="og:image" content="'+o.image+'">');
+  lines.push('<meta name="twitter:card" content="summary_large_image">');
+  lines.push('<meta name="twitter:title" content="'+o.title+'">');
+  if(o.desc) lines.push('<meta name="twitter:description" content="'+o.desc+'">');
+  if(o.image) lines.push('<meta name="twitter:image" content="'+o.image+'">');
+  return lines.join('\n');
+}
+function showMeta(o,outId,prevId){
+  const code=buildMeta(o);
+  document.getElementById(outId).textContent=code;
+  const p=document.getElementById(prevId);
+  if(p){p.innerHTML='<div class="ptitle">'+esc(o.title||'(no title)')+'</div><div class="purl">'+esc(o.url||'https://example.com/page')+'</div><div class="pdesc">'+esc(o.desc||'(no description)')+'</div>';}
+  return code;
+}
+function copyCode(id,btn){const t=document.getElementById(id).textContent;if(navigator.clipboard){navigator.clipboard.writeText(t);}btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy Meta Tags',1200);}
+</script>
+
+</div>
+<footer><p>MetaTagGenerator — free SEO meta tag tools for every website.</p><p><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimer.html">Disclaimer</a></p></footer>
+</body>
+</html>
