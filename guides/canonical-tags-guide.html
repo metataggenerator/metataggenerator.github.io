@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canonical Tags: Fix Duplicate Content the Right Way</title>
+<meta name="description" content="A canonical tag tells search engines which version of a page is the original. Learn when and how to use one.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.6}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:22px;font-weight:800;color:#1d4ed8}
+nav a{margin-left:16px;color:#374151;font-weight:600}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.hero{background:linear-gradient(120deg,#1e3a8a,#2563eb 45%,#06b6d4);color:#fff;padding:40px 28px;border-radius:0 0 16px 16px;margin-bottom:20px;text-align:center}
+.hero h1{font-size:32px;margin-bottom:8px}
+.hero p{max-width:640px;margin:0 auto}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+.card h2{font-size:20px;margin-bottom:10px}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input[type=text],input[type=url],textarea{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+button{background:#2563eb;color:#fff;border:none;padding:11px 18px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:12px}
+button:hover{background:#1d4ed8}
+button.secondary{background:#fff;color:#2563eb;border:1px solid #2563eb}
+.result{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:14px;margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:monospace;font-size:13px}
+.preview{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px;margin-top:12px}
+.preview .ptitle{color:#1a0dab;font-size:18px}
+.preview .purl{color:#006621;font-size:13px}
+.preview .pdesc{color:#545454;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.article-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:150px;object-fit:cover;display:block}
+.article-card .body{padding:14px}
+.article-card h3{font-size:16px;margin-bottom:6px}
+.article-card p{font-size:14px;color:#4b5563}
+.tools-list a{display:block;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin-bottom:10px;font-weight:700;color:#1f2937}
+.tools-list a span{display:block;font-weight:400;color:#6b7280;font-size:14px}
+.meter{height:10px;background:#e5e7eb;border-radius:6px;overflow:hidden;margin:8px 0}
+.meter div{height:100%;background:#2563eb}
+footer{background:#0f172a;color:#94a3b8;padding:24px 20px;text-align:center;margin-top:30px}
+footer a{color:#93c5fd;margin:0 10px}
+.faq h3{font-size:16px;margin-top:12px}
+.heroimg{width:100%;border-radius:12px;margin-bottom:16px}
+.muted{color:#6b7280;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/">MetaTagGenerator</a><nav><a href="/">Home</a><a href="/tools/open-graph-generator.html">Open Graph</a><a href="/tools/meta-description-checker.html">Description Checker</a><a href="/about.html">About</a></nav></header>
+<div class="container"><div class="card">
+<img class="heroimg" src="/images/canonical-tags-guide.jpg" alt="Canonical Tags: Fix Duplicate Content the Right Way">
+<h1>Canonical Tags: Fix Duplicate Content the Right Way</h1>
+<p style='margin-bottom:12px'>The same content often appears at more than one address: a product page with tracking parameters, a printer-friendly version, a page reachable with and without a trailing slash, or the same article on two domains. Search engines see those as separate pages, and the ranking value splits between them. The canonical tag fixes that by pointing every copy at one original.</p>
+<p style='margin-bottom:12px'>This guide explains what a canonical tag is, when to use it, how to write it correctly, and the mistakes that make it useless.</p>
+<h2 style='margin:18px 0 8px'>What a canonical tag is</h2>
+<p style='margin-bottom:12px'>A canonical tag is a link element in the head of a page: &lt;link rel="canonical" href="https://example.com/original-page/"&gt;. It tells search engines that this page is a copy or a variant, and that the ranking value should go to the address in the href. It is a hint, not a command, but Google follows it in most cases.</p>
+<p style='margin-bottom:12px'>Every page should have a canonical tag pointing at itself, even when there is no duplicate. That self-referencing canonical protects the page when someone links to a version with tracking parameters, because the tag tells Google the clean address is the real one.</p>
+<h2 style='margin:18px 0 8px'>When to use a canonical tag</h2>
+<p style='margin-bottom:12px'>Use it when the same or very similar content appears at multiple URLs: product pages with sort or filter parameters, the same article in two categories, an HTTP and an HTTPS version, or a page with and without 'www'. Also use it for syndicated content: if another site republishes your article, their copy should carry a canonical tag pointing at your original.</p>
+<p style='margin-bottom:12px'>Do not use a canonical tag as a substitute for a redirect when a page is permanently gone: use a 301 redirect instead. And do not use it to point at a different page with different content, because Google will ignore a canonical that does not match.</p>
+<h2 style='margin:18px 0 8px'>How to write it correctly</h2>
+<p style='margin-bottom:12px'>Use the full absolute URL, including the protocol and domain, and make it the address you want in search results. Put the tag in the head of every version of the page, including the original, where it points at itself. Make sure the canonical address returns a 200 status and is not blocked by robots.txt or a noindex tag.</p>
+<p style='margin-bottom:12px'>If you use an SEO plugin, it usually adds canonical tags automatically. Check that the plugin's address matches the address you actually want indexed, especially after changing domains, moving to HTTPS, or changing permalink structures.</p>
+<h2 style='margin:18px 0 8px'>Common canonical mistakes</h2>
+<p style='margin-bottom:12px'>The most common mistake is a canonical tag that points at a page that redirects, or at a 404 page. Google ignores those. The second mistake is conflicting signals: a canonical pointing one way and internal links pointing another. The third is using relative URLs, which can resolve to the wrong address on some pages.</p>
+<p style='margin-bottom:12px'>Another mistake is pointing many pages at one category page in the hope of combining their ranking value. Canonical tags are for duplicate content, not for unrelated pages. If the content is different, each page should be canonical to itself.</p>
+<h2 style='margin:18px 0 8px'>Key takeaways</h2><ul>
+<li style='margin-bottom:6px'>Every page should have a self-referencing canonical tag.</li>
+<li style='margin-bottom:6px'>Use absolute URLs and point at the address you want in search results.</li>
+<li style='margin-bottom:6px'>Use canonical tags for duplicates; use 301 redirects for pages that are gone.</li>
+<li style='margin-bottom:6px'>Check for conflicts: internal links and canonical tags should agree.</li>
+</ul>
+<h2 style='margin:18px 0 8px'>Frequently asked questions</h2><div class='faq'>
+<h3>What is a canonical tag?</h3><p style='margin-bottom:12px'>A link tag in a page's head that tells search engines which address is the original version, so ranking value is not split between duplicates.</p>
+<h3>Is a canonical tag the same as a redirect?</h3><p style='margin-bottom:12px'>No. A redirect sends visitors and crawlers to a new address. A canonical tag leaves the page in place but tells search engines which version to credit.</p>
+<h3>Should every page have a canonical tag?</h3><p style='margin-bottom:12px'>Yes, a self-referencing one. It protects the page when someone links to a version with tracking parameters or a trailing slash.</p>
+</div>
+<h2 style='margin:18px 0 8px'>Related guides</h2><ul>
+<li><a href='/guides/robots-meta-tag.html'>The Robots Meta Tag: Control Indexing Page by Page</a></li>
+<li><a href='/guides/meta-tags-mistakes.html'>10 Meta Tag Mistakes That Hurt Your SEO</a></li>
+<li><a href='/guides/meta-tags-audit.html'>How to Audit Your Meta Tags in Under an Hour</a></li>
+</ul>
+</div></div>
+<footer><p>MetaTagGenerator — free SEO meta tag tools for every website.</p><p><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimer.html">Disclaimer</a></p></footer>
+</body>
+</html>

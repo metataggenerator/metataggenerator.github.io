@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Audit Your Meta Tags in Under an Hour</title>
+<meta name="description" content="A step-by-step audit process to find missing, duplicate, or over-long meta tags across a whole website using free tools.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.6}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:#fff;border-bottom:1px solid #e5e7eb;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-size:22px;font-weight:800;color:#1d4ed8}
+nav a{margin-left:16px;color:#374151;font-weight:600}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.hero{background:linear-gradient(120deg,#1e3a8a,#2563eb 45%,#06b6d4);color:#fff;padding:40px 28px;border-radius:0 0 16px 16px;margin-bottom:20px;text-align:center}
+.hero h1{font-size:32px;margin-bottom:8px}
+.hero p{max-width:640px;margin:0 auto}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:20px}
+.card h2{font-size:20px;margin-bottom:10px}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input[type=text],input[type=url],textarea{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+button{background:#2563eb;color:#fff;border:none;padding:11px 18px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:12px}
+button:hover{background:#1d4ed8}
+button.secondary{background:#fff;color:#2563eb;border:1px solid #2563eb}
+.result{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:14px;margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:monospace;font-size:13px}
+.preview{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:14px;margin-top:12px}
+.preview .ptitle{color:#1a0dab;font-size:18px}
+.preview .purl{color:#006621;font-size:13px}
+.preview .pdesc{color:#545454;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.article-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+.article-card img{width:100%;height:150px;object-fit:cover;display:block}
+.article-card .body{padding:14px}
+.article-card h3{font-size:16px;margin-bottom:6px}
+.article-card p{font-size:14px;color:#4b5563}
+.tools-list a{display:block;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px;margin-bottom:10px;font-weight:700;color:#1f2937}
+.tools-list a span{display:block;font-weight:400;color:#6b7280;font-size:14px}
+.meter{height:10px;background:#e5e7eb;border-radius:6px;overflow:hidden;margin:8px 0}
+.meter div{height:100%;background:#2563eb}
+footer{background:#0f172a;color:#94a3b8;padding:24px 20px;text-align:center;margin-top:30px}
+footer a{color:#93c5fd;margin:0 10px}
+.faq h3{font-size:16px;margin-top:12px}
+.heroimg{width:100%;border-radius:12px;margin-bottom:16px}
+.muted{color:#6b7280;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/">MetaTagGenerator</a><nav><a href="/">Home</a><a href="/tools/open-graph-generator.html">Open Graph</a><a href="/tools/meta-description-checker.html">Description Checker</a><a href="/about.html">About</a></nav></header>
+<div class="container"><div class="card">
+<img class="heroimg" src="/images/meta-tags-audit.jpg" alt="How to Audit Your Meta Tags in Under an Hour">
+<h1>How to Audit Your Meta Tags in Under an Hour</h1>
+<p style='margin-bottom:12px'>A meta tag audit sounds like a big project, but for most small and medium sites it takes under an hour. You crawl the site, list the problems, fix the worst ten, and schedule the rest. The audit pays for itself quickly, because the errors it finds are usually costing clicks every day.</p>
+<p style='margin-bottom:12px'>This guide gives you a step-by-step audit process using free tools, in the order that finds the biggest problems first.</p>
+<h2 style='margin:18px 0 8px'>Step 1: crawl the site</h2>
+<p style='margin-bottom:12px'>Start with a crawler. Screaming Frog's free version crawls up to 500 URLs, which covers most small sites. Google Search Console also lists pages with title and description issues under its enhancements reports. Run the crawl and export the list of pages with their titles, descriptions, and status codes.</p>
+<p style='margin-bottom:12px'>If the site is larger than 500 pages, crawl it in sections: the homepage and main categories first, then blog posts, then products. The most important pages are usually a small share of the total, so prioritise them.</p>
+<h2 style='margin:18px 0 8px'>Step 2: find the big problems</h2>
+<p style='margin-bottom:12px'>Sort the crawl results by problem. First, pages with missing titles or descriptions. Second, duplicate titles and descriptions. Third, titles over 60 characters and descriptions over 160. Fourth, pages with a noindex tag that should be indexed, and indexed pages that should be noindex.</p>
+<p style='margin-bottom:12px'>Count each problem type. If fifty pages share one duplicate title, that is one fix in the template, not fifty fixes. Template errors are the best return on audit time, because one change fixes many pages at once.</p>
+<h2 style='margin:18px 0 8px'>Step 3: check social and technical tags</h2>
+<p style='margin-bottom:12px'>Pick a sample of ten pages: the homepage, the top five landing pages, and four random pages. View the source of each and check the Open Graph tags, the Twitter Card tags, the canonical tag, the charset tag, and the viewport tag. Test one URL in the Sharing Debugger and the Card Validator.</p>
+<p style='margin-bottom:12px'>Sample checks catch template errors that a crawl may miss, such as a relative og:image URL or a canonical tag pointing at the wrong address. If a sample page has a problem, check whether the template affects all pages of that type.</p>
+<h2 style='margin:18px 0 8px'>Step 4: fix, prioritise, and repeat</h2>
+<p style='margin-bottom:12px'>Fix the biggest problems first: stray noindex tags, missing titles on important pages, and duplicate titles on high-traffic pages. Then work through the list in priority order, ten issues at a time. Record what you fixed and when, so the next audit can measure improvement.</p>
+<p style='margin-bottom:12px'>Schedule the next audit for three months later, or after any redesign, migration, or template change. Audits are most valuable as a routine, not a one-off: each one is faster than the last, because the list of problems shrinks.</p>
+<p style='margin-bottom:12px'>One last tip: keep the audit report. Save the crawl export and your list of fixes with the date, so the next audit starts from a known baseline instead of from scratch. A short record turns a one-time cleanup into a habit that keeps the site healthy.</p>
+<h2 style='margin:18px 0 8px'>Key takeaways</h2><ul>
+<li style='margin-bottom:6px'>Crawl first: a free crawler covers up to 500 URLs and lists every problem.</li>
+<li style='margin-bottom:6px'>Fix template errors first: one change can fix fifty pages at once.</li>
+<li style='margin-bottom:6px'>Sample-check ten pages by hand for social and technical tags.</li>
+<li style='margin-bottom:6px'>Repeat the audit quarterly and after any redesign or migration.</li>
+</ul>
+<h2 style='margin:18px 0 8px'>Frequently asked questions</h2><div class='faq'>
+<h3>How long does a meta tag audit take?</h3><p style='margin-bottom:12px'>Under an hour for most small and medium sites. Large sites take longer, but crawling in sections keeps it manageable.</p>
+<h3>What free tools can I use for a meta tag audit?</h3><p style='margin-bottom:12px'>Screaming Frog's free version crawls up to 500 URLs, and Google Search Console reports title and description issues.</p>
+<h3>How often should I audit my meta tags?</h3><p style='margin-bottom:12px'>Every three months, and after any redesign, migration, or template change.</p>
+</div>
+<h2 style='margin:18px 0 8px'>Related guides</h2><ul>
+<li><a href='/guides/meta-tags-seo-checklist.html'>Meta Tags SEO Checklist: 15 Things to Check on Every Page</a></li>
+<li><a href='/guides/meta-tags-mistakes.html'>10 Meta Tag Mistakes That Hurt Your SEO</a></li>
+<li><a href='/guides/canonical-tags-guide.html'>Canonical Tags: Fix Duplicate Content the Right Way</a></li>
+</ul>
+</div></div>
+<footer><p>MetaTagGenerator — free SEO meta tag tools for every website.</p><p><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimer.html">Disclaimer</a></p></footer>
+</body>
+</html>
